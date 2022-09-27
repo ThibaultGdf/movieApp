@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MovieDetailView: View {
     let movie : Movie
-    var heart: Bool
+    @State var heart: Bool = false
     
     var body: some View {
         
@@ -17,12 +17,13 @@ struct MovieDetailView: View {
         VStack {
            
             Button {
-                if heart = true {
-                    
-                }
+                heart.toggle()
               //  else
             } label: {
-                Image(systemName: "heart")
+                
+
+                Image(systemName: heart ? "heart.fill" : "heart")
+                    .foregroundColor(.red)
                 
             
                 
